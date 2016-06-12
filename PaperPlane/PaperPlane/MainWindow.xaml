@@ -1,0 +1,211 @@
+﻿<Window x:Class="PaperPlane.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaperPlane"
+        mc:Ignorable="d"
+        Title="PaperPlane" Height="500" Width="700" 
+        KeyDown="Window_KeyDown" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/BlueSky.png"/>
+    </Window.Background>
+
+
+    <Grid>
+        <!--Main Menu-->
+        <Grid Name="MainMenuGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="3" 
+                    Margin="10" HorizontalAlignment="Center">
+                <Image Source="Images/PaperPlane.png" HorizontalAlignment="Left" 
+            		VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="1" 
+                    Margin="10" VerticalAlignment="Center">
+                <Image Source="Images/Nick.png" Height="40" 
+                    Stretch="Uniform"/>
+                <TextBox Name="NickTextBox" Background="{x:Null}" 
+                    FontFamily="Comic Sans MS" FontSize="21.333" 
+                    FontWeight="Bold" TextAlignment="Center" />
+                <Button Name="StartGameButton" Height="40" 
+                    BorderBrush="{x:Null}" Foreground="{x:Null}" 
+                    Click="StartGameButton_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/StartGame.png" 
+                            Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button Name="BoxScorsesButton" Height="40" 
+                    BorderBrush="{x:Null}" Foreground="{x:Null}" 
+                    Click="BoxScorsesButton_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/BoxScorses.png" 
+                            Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button Name="ExitButton" Height="40" 
+                    BorderBrush="{x:Null}" Foreground="{x:Null}" 
+                    Click="ExitButton_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/Exit.png" 
+                            Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" Grid.Row="1" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="Images/Plane.png"/>
+            </StackPanel>
+        </Grid>
+
+        <!--Game Play-->
+
+        <Grid Name="GamePlayGrid" 
+              Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Image Source="Images/Score.png" Stretch="Uniform"
+                    Margin="300,0,0,0"/>
+                <Label Name="ScoreLabel" Content="0 m"
+                    Margin="50,0,50,0" FontFamily="Comic Sans MS" 
+                    FontSize="30" FontWeight="Bold"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1">
+                <Canvas Name="GamePlayCanvas" Width="692"
+                    Height="417">
+                    <Image Name="CloudImage" Grid.Row="1"
+                        Width="190" Height="125"
+                        Source="Images/Cloud.png"/>
+                    <Image x:Name="BirdImage" Grid.Row="1"
+                        Width="130" Height="98"
+                    	Source="Images/Bird.png"/>
+                    <Image x:Name="PlaneImage" Grid.Row="1" 
+                    	Width="100" Height="43" 
+                    	Source="Images/Plane.png" />
+                </Canvas>
+            </StackPanel>
+
+        </Grid>
+
+        <!--Game Over-->
+
+        <Grid Name="GameOver" Margin="20"
+            Visibility="Hidden">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Image Name="GameOverImage" Grid.ColumnSpan="2"
+                Source="Images/GameOver.png"/>
+
+            <Image Name="FinalScoreImage" Source="Images/Score.png"
+                Stretch="Uniform" Grid.Column="0"
+                Grid.Row="1"/>
+
+            <Label Name="FinalScoreLabel" FontFamily="Comic Sans MS" 
+                FontSize="90" FontWeight="Bold"
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Grid.Column="1" Grid.Row="1"/>
+
+            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2"
+                Grid.Row="2">
+                <Image Source="Images/Plane.png" VerticalAlignment="Center"
+                    HorizontalAlignment="Center" Width="250"/>
+                <Button Name="BackToMainManuButton" BorderBrush="{x:Null}" 
+                    Foreground="{x:Null}" Width="200"
+                    Click="BackToMainManuButton_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/MainMenu.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!--Box Scorses-->
+
+        <Grid Name="BoxScorsesGrid" Visibility="Hidden">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="Images/BoxScorses.png" Grid.Column="1"
+                Grid.Row="0"/>
+
+            <ListView Name="BoxScorsesListView" Grid.Column="1"
+                Grid.Row="1" Margin="10"
+                ItemsSource="{Binding BoxScorses}" FontFamily="Comic Sans MS" 
+                FontSize="30" FontWeight="Bold">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Nick" Width="160" 
+                            DisplayMemberBinding="{Binding Nick}"/>
+                        <GridViewColumn Header="Score" Width="160" 
+                            DisplayMemberBinding="{Binding Score}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Button Name="BackButton" Grid.Column="1"
+                Grid.Row="2" BorderBrush="{x:Null}" 
+                Foreground="{x:Null}" Click="BackButton_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/Back.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+
+            <Image Source="Images/Plane.png" Grid.Column="0"
+                Grid.Row="1"/>
+
+            <StackPanel Grid.Column="2" Grid.Row="1"
+                VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Name="DeleteButton" BorderBrush="{x:Null}" 
+                    Foreground="{x:Null}" Click="DeleteButton_Click" 
+                    Width="158" Height="53">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/Delete.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+
+                <Button Name="DeleteAllButton" BorderBrush="{x:Null}" 
+                    Foreground="{x:Null}" Click="DeleteAllButton_Click" 
+                    Width="158" Height="53">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/DeleteAll.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

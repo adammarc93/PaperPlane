@@ -1,0 +1,15 @@
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\bin\Debug\PaperPlane.exe.config
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\bin\Debug\PaperPlane.exe
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\bin\Debug\PaperPlane.pdb
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\PaperPlane.csprojResolveAssemblyReference.cache
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\MainWindow.g.cs
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\App.g.cs
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\PaperPlane_MarkupCompile.cache
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\PaperPlane_MarkupCompile.lref
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\MainWindow.baml
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\PaperPlane.g.resources
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\PaperPlane.Properties.Resources.resources
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\PaperPlane.csproj.GenerateResource.Cache
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\PaperPlane.exe
+c:\users\adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\PaperPlane.pdb
+C:\Users\Adam\documents\visual studio 2015\Projects\PaperPlane\PaperPlane\obj\Debug\PaperPlane_Content.g.cs
