@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
@@ -170,7 +170,6 @@ namespace PaperPlane
                     ObstacleBird.Width, ObstacleBird.Height) == true)
                     gameLoss();
             }
-
             else
                 ObstacleBird.SetStartPosition();
         }
@@ -222,7 +221,7 @@ namespace PaperPlane
             using (var sw = new StreamWriter(filePath))
             {
                 var serializer = new XmlSerializer(typeof(ObservableCollection<Player>));
-                serializer.Serialize(sw, BoxScorses);
+                serializer.Serialize(sw, this.BoxScorses);
             }
         }
 
@@ -238,7 +237,7 @@ namespace PaperPlane
 
                 foreach (var item in tmpList)
                 {
-                    BoxScorses.Add(item);
+                    this.BoxScorses.Add(item);
                 }
             }
         }
@@ -276,8 +275,6 @@ namespace PaperPlane
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            ListToXmlFile();
-
             BoxScorsesGrid.Visibility = Visibility.Hidden;
             MainMenuGrid.Visibility = Visibility.Visible;
             gameStatus = Status.mainManu;
